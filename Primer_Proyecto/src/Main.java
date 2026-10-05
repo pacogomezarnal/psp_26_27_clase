@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args){
         try {
             //Prepara un nuevo proceso
+            //Process process = new ProcessBuilder("ls", "-l").start();
             ProcessBuilder pBuilder = new ProcessBuilder("ls", "-l");
             //Creo un nuevo proceso
             Process process = pBuilder.start();

@@ -1,0 +1,26 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStreamReader;
+
+//Cambiar el directorio de ejecución de nuestro proceso
+public class Main {
+    public static void main(String[] args) {
+        //Capturar directorios del sistema
+        String userHome = System.getProperty("user.home");
+        String userDir = System.getProperty("user.dir");
+        //Pantalla
+        System.out.println("Directorio del usuario logado: "+userHome);
+        System.out.println("Directorio de trabajo: "+userDir);
+        try{
+            ProcessBuilder pBuilder = new ProcessBuilder("ls","-l");
+            pBuilder.directory(new File(userHome));
+            //Creo un nuevo proceso
+            Process process = pBuilder.start();
+            //Stream del proceso
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            reader.lines().forEach(System.out::println);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+}
