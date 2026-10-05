@@ -2,22 +2,25 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
 
-//Cambiar el directorio de ejecución de nuestro proceso
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //Capturar directorios del sistema
-        String userHome = System.getProperty("user.home");
-        String userDir = System.getProperty("user.dir");
         //Sistema operativo
         String os = System.getProperty("os.name");
-        //Pantalla
-        System.out.println("Directorio del usuario logado: "+userHome);
-        System.out.println("Directorio de trabajo: "+userDir);
-        System.out.println("SO: "+os);
+        String command = "";
+        String directory = "";
+        //Crear el comando dependiendo del SO
+        if(os.toLowerCase().startsWith("linux")){
+            command = "sh -c ls -l";
+            directory = "/tmp";
+        }else{
+            command = "cmd /c dir";
+            directory = "c:/temp";
+        }
         try{
-            String command = "ls -l";
             ProcessBuilder pBuilder = new ProcessBuilder(command.split("\\s"));
-            pBuilder.directory(new File(userHome));
+            pBuilder.directory(new File(directory));
             //Creo un nuevo proceso
             Process process = pBuilder.start();
             //Stream del proceso
