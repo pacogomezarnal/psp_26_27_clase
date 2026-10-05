@@ -12,7 +12,8 @@ public class Main {
         System.out.println("Directorio del usuario logado: "+userHome);
         System.out.println("Directorio de trabajo: "+userDir);
         try{
-            ProcessBuilder pBuilder = new ProcessBuilder("ls","-l");
+            String command = "ls -l";
+            ProcessBuilder pBuilder = new ProcessBuilder(command.split("\\s"));
             pBuilder.directory(new File(userHome));
             //Creo un nuevo proceso
             Process process = pBuilder.start();
