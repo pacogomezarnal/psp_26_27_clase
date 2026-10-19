@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/01_Procesos/00_Primer_Proyecto/00_Primer_Proyecto.iml" filepath="$PROJECT_DIR$/01_Procesos/00_Primer_Proyecto/00_Primer_Proyecto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01_Procesos/02_Configuraciones_Procesos/02_Configuraciones_Procesos.iml" filepath="$PROJECT_DIR$/01_Procesos/02_Configuraciones_Procesos/02_Configuraciones_Procesos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01_Procesos/Reto01 Configuracion so/Reto01 Configuracion so.iml" filepath="$PROJECT_DIR$/01_Procesos/Reto01 Configuracion so/Reto01 Configuracion so.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/psp_26_27_clase.iml" filepath="$PROJECT_DIR$/.idea/psp_26_27_clase.iml" />
+    </modules>
+  </component>
+</project>
